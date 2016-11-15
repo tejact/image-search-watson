@@ -18,8 +18,12 @@ public class SimpleCountryDAO implements CountryDao{
     @Override
     public Country findCountryByName(String countryName) throws CountryNotFoundException {
        return ALL_COUNTRIES.stream()
-                     .filter(currentCountry -> currentCountry.getCountryName().equals(countryName)  )
+                     .filter(currentCountry -> currentCountry.getCountryName().equals(countryName))
                      .findFirst()
                      .orElseThrow(() -> new CountryNotFoundException());
+    }
+
+    public List<Country> getAllCountries() {
+        return ALL_COUNTRIES;
     }
 }
