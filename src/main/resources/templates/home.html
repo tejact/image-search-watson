@@ -6,7 +6,9 @@
     <title>Countries Using Spring</title>
     <link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Noto+Sans:700,400' rel='stylesheet' type='text/css'/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--
     <link rel="stylesheet" href="css/normalize.css"/>
+-->
     <link rel="stylesheet" href="css/site.css"/>
 </head>
 <body>
@@ -14,10 +16,25 @@
 
 </header>
 <section>
-    <tr th:each="country : ${countries}">
+ <!--   <tr th:each="country : ${countries}">
         <td th:text="${country.countryName}">1</td>
         <td th:text="${country.capitalCity}">1</td>
-    </tr>
+    </tr>-->
+
+    <ul>
+        <li th:each="country : ${countries}">
+                <p th:text="${country.countryName}">Dummy</p>
+
+        <!-- Same thing can be achieved in any of the syntax...
+                <img th:attr="src=@{images/{pathVariable}/(pathVariable=${country.flagImageName})}" alt="country-flag"/>
+        -->
+
+        <!-- Long form of the third option below
+                <img th:attr="src=@{'images/'+ ${country.flagImageName}}" alt="country-flag"/>
+        -->
+                <img th:src="@{'images/'+ ${country.flagImageName}}" alt="country-flag"/>
+        </li>
+    </ul>
 
 </section>
 <footer>
