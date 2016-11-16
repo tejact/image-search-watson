@@ -14,11 +14,27 @@ public class SimpleCountryDAO implements CountryDao{
 
     static List<String> indianLanguages = Arrays.asList("English","Hindi");
     String slug1 = slg.slugify("India");
-    String slug2 = slg.slugify("India Duplicate");
+    Country country1 = new Country("India",1332858390,"New Delhi",indianLanguages,"india.png",slug1);
+
+    static List<String> ecuadorLanguages = Arrays.asList("Spanish");
+    String slug2 = slg.slugify("ecuador");
+    Country country2 = new Country("ecuador",16385450,"Quito",ecuadorLanguages,"ecuador.png",slug2);
+
+    static List<String> franceLanguages = Arrays.asList("french");
+    String slug3 = slg.slugify("france");
+    Country country3 = new Country("France",64772466,"Paris",franceLanguages,"france.png",slug3);
+
+    static List<String> italyLanguages = Arrays.asList("Italian");
+    String slug4 = slg.slugify("italy");
+    Country country4 = new Country("Italy",59802270,"Rome",italyLanguages,"italy.png",slug4);
+
+    static List<String> kenayaLanguages = Arrays.asList("Swahili","English");
+    String slug5 = slg.slugify("kenya");
+    Country country5 = new Country("Kenya",47707747,"Nairobi",kenayaLanguages,"kenya.png",slug5);
+
 
     private  final List<Country> ALL_COUNTRIES = Arrays.asList(
-        new Country("India",1000000,"Delhi",indianLanguages,"india-flag.png",slug1),
-        new Country("India Duplicate",1000000,"Delhi",indianLanguages,"india-flag.png",slug2)
+            country1,country2,country3,country4,country5
     );
 
     @Override
