@@ -23,6 +23,8 @@
 
     <ul>
         <li th:each="country : ${countries}">
+
+
                 <p th:text="${country.countryName}">Dummy</p>
 
         <!-- Same thing can be achieved in any of the syntax...
@@ -32,7 +34,9 @@
         <!-- Long form of the third option below
                 <img th:attr="src=@{'images/'+ ${country.flagImageName}}" alt="country-flag"/>
         -->
+            <a th:href="@{'details/'+${country.slug}}">
                 <img th:src="@{'/images/'+ ${country.flagImageName}}" alt="country-flag"/>
+             </a>
         </li>
     </ul>
 
