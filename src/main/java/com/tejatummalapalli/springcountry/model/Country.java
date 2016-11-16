@@ -8,14 +8,26 @@ public class Country {
     private String capitalCity;
     private List<String> officialLanguages;
     private String flagImageName;
+    private String slug;
 
 
-    public Country(String countryName, int population, String capitalCity, List<String> officialLanguages, String flagImageName) {
+    public Country(String countryName, int population, String capitalCity,
+                   List<String> officialLanguages, String flagImageName,
+                   String slug) {
         this.countryName = countryName;
         this.population = population;
         this.capitalCity = capitalCity;
         this.officialLanguages = officialLanguages;
         this.flagImageName = flagImageName;
+        this.slug = slug;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 
     public String getCountryName() {

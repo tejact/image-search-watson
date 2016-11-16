@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"/>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Deatils of the Country</title>
+</head>
+<body>
+    <ul>
+        <li th:text="${country.countryName}">1</li>
+        <li th:text="${country.population}">2</li>
+        <li th:text="${country.capitalCity}">3</li>
+        <p>Languages are::</p>
+        <li th:each="language : ${country.officialLanguages}" th:text="${language}">
+            Official Languages
+        </li>
+    </ul>
+    <img th:src="@{'/images/'+ ${country.flagImageName}}" alt="country-flag"/>
+</body>
+</html>

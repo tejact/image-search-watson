@@ -26,5 +26,8 @@ dependencies {
     //compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.4.1.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '1.4.2.RELEASE'
 
+    // https://mvnrepository.com/artifact/com.github.slugify/slugify
+    compile group: 'com.github.slugify', name: 'slugify', version: '2.1.7'
+
 
 }
