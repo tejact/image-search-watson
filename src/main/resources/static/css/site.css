@@ -1,11 +1,21 @@
+/*Having consistent space across all the elements*/
+*{
+    box-sizing: border-box; /*Included padding and margin in the provided dimensions*/
+    padding-left: 0.5em;
+    margin : 0.5em;
+}
+
 section {
     background-color: #ff9dc3;
 }
 
+/*Rendering the flags row by row*/
+/*http://blog.teamtreehouse.com/using-inline-block-to-display-a-product-grid-view*/
 ul li {
     display: inline-block;
     height: 150px;
     width:30%;
+    height : 70%;
 }
 
 img {

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"/>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Deatils of the Country</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout :: head('Countries Using Spring')"></head>
 <body>
-    <ul>
+<header>
+<!--
+    <div th:replace="layout :: nav"></div>
+-->
+</header>
+<ul>
         <li th:text="${country.countryName}">1</li>
         <li th:text="${country.population}">2</li>
         <li th:text="${country.capitalCity}">3</li>
