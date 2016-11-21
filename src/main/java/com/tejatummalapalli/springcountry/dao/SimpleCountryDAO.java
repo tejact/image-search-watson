@@ -3,10 +3,13 @@ package com.tejatummalapalli.springcountry.dao;
 import com.github.slugify.Slugify;
 import com.tejatummalapalli.springcountry.exception.CountryNotFoundException;
 import com.tejatummalapalli.springcountry.model.Country;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
+@Component
 public class SimpleCountryDAO implements CountryDao{
     //In Memory Repo .. But it is not recommended...
     //TODO: Dummy values..
@@ -18,7 +21,7 @@ public class SimpleCountryDAO implements CountryDao{
 
     static List<String> ecuadorLanguages = Arrays.asList("Spanish");
     String slug2 = slg.slugify("ecuador");
-    Country country2 = new Country("ecuador",16385450,"Quito",ecuadorLanguages,"ecuador.png",slug2);
+    Country country2 = new Country("Ecuador",16385450,"Quito",ecuadorLanguages,"ecuador.png",slug2);
 
     static List<String> franceLanguages = Arrays.asList("french");
     String slug3 = slg.slugify("france");
@@ -54,5 +57,20 @@ public class SimpleCountryDAO implements CountryDao{
         return ALL_COUNTRIES.stream()
                 .filter(currentCountry -> currentCountry.getSlug().equals(slug))
                 .findFirst()
-                .orElseThrow(() -> new CountryNotFoundException());    }
+                .orElseThrow(() -> new CountryNotFoundException());
+    }
+
+    @Override
+    public List<Country> getSortedContriesByName() {
+        return ALL_COUNTRIES.stream()
+                            .sorted()
+                            .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Country> getSortedCountriesByPopulation() {
+        return ALL_COUNTRIES.stream()
+                .sorted((c1,c2) -> c1.getPopulation() - c2.getPopulation())
+                .collect(Collectors.toList());
+    }
 }

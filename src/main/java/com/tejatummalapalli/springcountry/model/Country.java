@@ -2,7 +2,7 @@ package com.tejatummalapalli.springcountry.model;
 
 import java.util.List;
 
-public class Country {
+public class Country implements Comparable<Country> {
     private String countryName;
     private int population;
     private String capitalCity;
@@ -68,5 +68,11 @@ public class Country {
 
     public void setFlagImageName(String flagImageName) {
         this.flagImageName = flagImageName;
+    }
+
+
+    @Override
+    public int compareTo(Country otherCountry) {
+        return this.getCountryName().compareTo(otherCountry.getCountryName());
     }
 }
