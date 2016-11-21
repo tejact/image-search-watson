@@ -22,3 +22,21 @@ img {
     width: 100%;
     height: auto;
 }
+
+
+/*CSS FOR Details Page*/
+
+.country-details{
+    margin-top : 30%;
+}
+
+.country-name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.country-details {
+    margin: auto;
+    width: 70%;
+}

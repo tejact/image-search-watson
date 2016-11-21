@@ -7,15 +7,43 @@
     <div th:replace="layout :: nav"></div>
 -->
 </header>
-<ul>
-        <li th:text="${country.countryName}">1</li>
-        <li th:text="${country.population}">2</li>
-        <li th:text="${country.capitalCity}">3</li>
-        <p>Languages are::</p>
-        <li th:each="language : ${country.officialLanguages}" th:text="${language}">
-            Official Languages
-        </li>
-    </ul>
-    <img th:src="@{'/images/'+ ${country.flagImageName}}" alt="country-flag"/>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4" >
+            <div class="country-details">
+                <div  class="country-name" th:text="${country.countryName}">country name</div>
+                <img th:src="@{'/images/'+ ${country.flagImageName}}" alt="country-flag"/>
+
+                <table class="country-details">
+                    <tr>
+                        <td>Population</td>
+                        <td th:text="${country.population}"></td>
+                    </tr>
+                    <tr>
+                        <td>Capital City</td>
+                        <td th:text="${country.capitalCity}"></td>
+                    </tr>
+                    <tr>
+                        <td>Official Langauges</td>
+                        <td>
+                            <div th:each="language : ${country.officialLanguages}" th:text="${language}">
+                            Official Languages
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            <!--
+                <ul>
+                    <li th:text="${country.population}">2</li>
+                    <li th:text="${country.capitalCity}">3</li>
+                    <p>Languages are::</p>
+                    <li th:each="language : ${country.officialLanguages}" th:text="${language}">
+                        Official Languages
+                    </li>
+                </ul>-->
+            </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
