@@ -5,9 +5,6 @@
     margin : 0.5em;
 }
 
-section {
-    background-color: #ff9dc3;
-}
 
 /*Rendering the flags row by row*/
 /*http://blog.teamtreehouse.com/using-inline-block-to-display-a-product-grid-view*/
@@ -23,6 +20,13 @@ img {
     height: auto;
 }
 
+.country-heading , .button-holder {
+    text-align: center;
+}
+
+.button {
+    width : 200px;
+}
 
 /*CSS FOR Details Page*/
 
@@ -39,4 +43,10 @@ img {
 .country-details {
     margin: auto;
     width: 70%;
+}
+
+tr  td{
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

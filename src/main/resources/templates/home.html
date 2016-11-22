@@ -10,7 +10,7 @@
 <section>
     <ul>
         <li th:each="country : ${countries}">
-            <p th:text="${country.countryName}">Dummy</p>
+            <div th:text="${country.countryName}" class="country-heading">Dummy</div>
 
             <!-- Same thing can be achieved in any of the syntax...
                     <img th:attr="src=@{images/{pathVariable}/(pathVariable=${country.flagImageName})}" alt="country-flag"/>
@@ -24,16 +24,16 @@
             </a>
         </li>
     </ul>
-
-    l
-
-
     <form action="/sort-by-country-name">
-        <input type="submit" value="Sort by Country Name"/>
+        <div class="button-holder">
+            <input type="submit" class="button" value="Sort by Country Name"/>
+        </div>
     </form>
 
     <form action="/sort-by-population">
-        <input type="submit" value="Sort by Population"/>
+        <div class="button-holder">
+            <input type="submit" class="button" value="Sort by Population"/>
+        </div>
     </form>
 
 </section>

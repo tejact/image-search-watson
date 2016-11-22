@@ -9,22 +9,22 @@
 </header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-offset-4 col-md-4" >
+            <div class="col-md-offset-3 col-md-6" >
             <div class="country-details">
                 <div  class="country-name" th:text="${country.countryName}">country name</div>
                 <img th:src="@{'/images/'+ ${country.flagImageName}}" alt="country-flag"/>
 
                 <table class="country-details">
                     <tr>
-                        <td>Population</td>
+                        <td>Population: </td>
                         <td th:text="${country.population}"></td>
                     </tr>
                     <tr>
-                        <td>Capital City</td>
+                        <td>Capital City: </td>
                         <td th:text="${country.capitalCity}"></td>
                     </tr>
                     <tr>
-                        <td>Official Langauges</td>
+                        <td>Official Langauges: </td>
                         <td>
                             <div th:each="language : ${country.officialLanguages}" th:text="${language}">
                             Official Languages
