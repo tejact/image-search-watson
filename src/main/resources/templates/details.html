@@ -24,9 +24,9 @@
                         <td th:text="${country.capitalCity}"></td>
                     </tr>
                     <tr>
-                        <td>Official Langauges: </td>
+                        <td>Classes: </td>
                         <td>
-                            <div th:each="language : ${country.officialLanguages}" th:text="${language}">
+                            <div th:each="language : ${country.classifiers}" th:text="${language}">
                             Official Languages
                             </div>
                         </td>

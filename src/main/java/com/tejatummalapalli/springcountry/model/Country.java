@@ -9,6 +9,7 @@ public class Country implements Comparable<Country> {
     private List<String> officialLanguages;
     private String flagImageName;
     private String slug;
+    private List<String> classifiers ;
 
 
     public Country(String countryName, int population, String capitalCity,
@@ -70,9 +71,18 @@ public class Country implements Comparable<Country> {
         this.flagImageName = flagImageName;
     }
 
+    public List<String> getClassifiers() {
+        return classifiers;
+    }
+
+    public void setClassifiers(List<String> classifiers) {
+        this.classifiers = classifiers;
+    }
 
     @Override
     public int compareTo(Country otherCountry) {
         return this.getCountryName().compareTo(otherCountry.getCountryName());
     }
+
+
 }

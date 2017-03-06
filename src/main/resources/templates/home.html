@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="layout :: head('Countries Using Spring')"></head>
-<body>
 <header>
 <!--
     <head th:include="layout :: nav"></head>
 -->
 </header>
+<body>
 <section>
+    <form action="/search-images">
+        <input type="text" name="search-keyword" placeholder="Enter the keyword here"/>
+        <div class="button-holder">
+            <input type="submit" class="button" value="Search Images"/>
+        </div>
+    </form>
+
     <ul>
         <li th:each="country : ${countries}">
             <div th:text="${country.countryName}" class="country-heading">Dummy</div>
 
-            <!-- Same thing can be achieved in any of the syntax...
+
+        <!-- Same thing can be achieved in any of the syntax...
                     <img th:attr="src=@{images/{pathVariable}/(pathVariable=${country.flagImageName})}" alt="country-flag"/>
             -->
 

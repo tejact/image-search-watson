@@ -5,6 +5,7 @@ import com.tejatummalapalli.springcountry.exception.CountryNotFoundException;
 import com.tejatummalapalli.springcountry.model.Country;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -72,5 +73,19 @@ public class SimpleCountryDAO implements CountryDao{
         return ALL_COUNTRIES.stream()
                 .sorted((c1,c2) -> c1.getPopulation() - c2.getPopulation())
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Country> getMatchedCountries(String searchKeyword)  {
+        List<Country> matchedCountries = new ArrayList<>();
+        for(Country country : ALL_COUNTRIES) {
+            for(String keyword : country.getClassifiers()) {
+                if(keyword.equals(searchKeyword)) {
+                    matchedCountries.add(country);
+                    break;
+                }
+            }
+        }
+        return matchedCountries;
     }
 }

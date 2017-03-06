@@ -15,4 +15,6 @@ public interface CountryDao {
     List<Country> getSortedContriesByName();
 
     List<Country> getSortedCountriesByPopulation();
+
+    List<Country> getMatchedCountries(String searchKeyword);
 }
