@@ -90,7 +90,7 @@ public class countryController {
         visualRecogservice.setApiKey("cf8ff9af4fd5323e190b6df6b730ab4919464c73");
         System.out.println("Classify an image");
         ClassifyImagesOptions options = new ClassifyImagesOptions.Builder()
-                .images(new File("C:\\Users\\IBM_ADMIN\\IdeaProjects\\project5Duplicate\\src\\main\\resources\\static\\images\\"+imageName))
+                .images(new File("/images"+imageName))
                 .build();
 
         VisualClassification result = visualRecogservice.classify(options).execute();
