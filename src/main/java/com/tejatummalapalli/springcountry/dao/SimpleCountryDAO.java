@@ -80,7 +80,7 @@ public class SimpleCountryDAO implements CountryDao{
         List<Country> matchedCountries = new ArrayList<>();
         for(Country country : ALL_COUNTRIES) {
             for(String keyword : country.getClassifiers()) {
-                if(keyword.equals(searchKeyword)) {
+                if(keyword.contains(searchKeyword)) {
                     matchedCountries.add(country);
                     break;
                 }

@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 @Controller
 public class countryController {
@@ -74,18 +76,21 @@ public class countryController {
 
     public void tagAllImages(){
         List<Country> allCountries =  simpleCountryDao.getAllCountries();
+        Map<String,Integer> allTagsWithCount = new TreeMap<>();
         for(Country country : allCountries) {
             tagImage(country);
         }
     }
 
     private void tagImage(Country country) {
+
         String imageName = country.getFlagImageName();
         String imageFile = new String(imageName);
+
         visualRecogservice.setApiKey("cf8ff9af4fd5323e190b6df6b730ab4919464c73");
         System.out.println("Classify an image");
         ClassifyImagesOptions options = new ClassifyImagesOptions.Builder()
-                .images(new File("C:\\Users\\Teja\\Desktop\\TreeHouseTD\\Project5\\src\\main\\resources\\static\\images\\"+imageName))
+                .images(new File("C:\\Users\\IBM_ADMIN\\IdeaProjects\\project5Duplicate\\src\\main\\resources\\static\\images\\"+imageName))
                 .build();
 
         VisualClassification result = visualRecogservice.classify(options).execute();
