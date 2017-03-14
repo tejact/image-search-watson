@@ -3,8 +3,8 @@ applications:
   memory: 1024M
   instances: 1
   domain: mybluemix.net
-  name: image-search-neww
-  host: image-search-neww
-  disk_quota: 512M
+  name: image-search
+  host: image-search
+  disk_quota: 128M
   path: build\libs\ImageSearch-1.0-SNAPSHOT.war
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
