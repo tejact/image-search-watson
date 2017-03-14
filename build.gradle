@@ -13,6 +13,12 @@ buildscript {
 apply plugin: 'spring-boot'
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'war'
+
+war{
+    baseName = 'ImageSearch'
+}
+
 
 sourceCompatibility = 1.8
 

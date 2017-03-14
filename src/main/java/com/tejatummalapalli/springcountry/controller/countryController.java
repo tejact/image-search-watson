@@ -89,8 +89,16 @@ public class countryController {
 
         visualRecogservice.setApiKey("cf8ff9af4fd5323e190b6df6b730ab4919464c73");
         System.out.println("Classify an image");
+
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("static/images/"+imageName).getFile());
+
+      /*  ClassifyImagesOptions options = new ClassifyImagesOptions.Builder()
+                .images(new File("/resources/images/"+imageName))
+                .build();*/
+
         ClassifyImagesOptions options = new ClassifyImagesOptions.Builder()
-                .images(new File("/images"+imageName))
+                .images(file)
                 .build();
 
         VisualClassification result = visualRecogservice.classify(options).execute();
