@@ -3,6 +3,6 @@ applications:
   memory: 1024M
   instances: 1
   domain: mybluemix.net
-  name: image-search
-  host: image-search
+  name: image-search-watson
+  host: image-search-watson
   disk_quota: 512M
